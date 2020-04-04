@@ -14,8 +14,8 @@ var templatesFolder;
  */
 module.exports = function (source) {
   this.cacheable && this.cacheable();
-  var options = loaderUtils.getOptions(this);
-  var appPath = (options.appPath || "app").replace(/\/$/, "");
+  var options = loaderUtils.getOptions(this) || {};
+  appPath = (options.appPath || "app").replace(/\/$/, "");
   templatesFolder = templatesFolder || path.join(appPath, "templates");
 
   templateTree =
