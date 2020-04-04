@@ -12,6 +12,7 @@
   "dependencies": {
     "components-ember": "https://github.com/components/ember/tarball/1.13.13",
     "ember-cli-htmlbars": "^2.0.1",
+    "loader-utils": "^1.0.0",
     "recursive-readdir-sync": "^1.0.6"
   }
 }

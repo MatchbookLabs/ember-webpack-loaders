@@ -1,5 +1,6 @@
 var fs = require("fs");
 var path = require("path");
+var loaderUtils = require("loader-utils");
 var recursive = require("recursive-readdir-sync");
 var appPath;
 var appVar;
@@ -10,7 +11,7 @@ var appVar;
  *  - appVar: default App
  */
 module.exports = function (source) {
-  var options = this.getOptions();
+  var options = loaderUtils.getOptions(this);
   appPath =
     appPath || path.resolve((options.appPath || "app").replace(/\/$/, ""));
   appVar = appVar || options.appVar || "App";

@@ -1,5 +1,6 @@
 var path = require("path");
 var HtmlbarsCompiler = require("ember-cli-htmlbars");
+var loaderUtils = require("loader-utils");
 
 var DEFAULT_TEMPLATE_COMPILER = "components-ember/ember-template-compiler.js";
 var templateTree;
@@ -12,7 +13,7 @@ var templatesFolder;
  *  - templateCompiler: default 'components-ember/ember-template-compiler.js'
  */
 module.exports = function (source) {
-  var options = this.getOptions();
+  var options = loaderUtils.getOptions(this);
   appPath = appPath || (options.appPath || "app").replace(/\/$/, "");
   templatesFolder = templatesFolder || path.join(appPath, "templates");
 

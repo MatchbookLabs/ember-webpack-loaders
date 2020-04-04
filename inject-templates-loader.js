@@ -1,4 +1,5 @@
 var path = require("path");
+var loaderUtils = require("loader-utils");
 var recursive = require("recursive-readdir-sync");
 
 /*
@@ -6,7 +7,7 @@ var recursive = require("recursive-readdir-sync");
  *  - appPath: default assuming webpack.config.js in root folder + ./app
  */
 module.exports = function (source) {
-  var options = this.getOptions();
+  var options = loaderUtils.getOptions(this);
   var appPath = (options.appPath || "app").replace(/\/$/, "");
   appPath = path.resolve(appPath);
   var templatesFolder = path.join(appPath, "templates");
