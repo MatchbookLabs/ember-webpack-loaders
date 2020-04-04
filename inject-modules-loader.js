@@ -11,7 +11,7 @@ var appVar;
  *  - appVar: default App
  */
 module.exports = function (source) {
-  var options = loaderUtils.getOptions(this);
+  var options = loaderUtils.getOptions(this) || {};
   appPath =
     appPath || path.resolve((options.appPath || "app").replace(/\/$/, ""));
   appVar = appVar || options.appVar || "App";
